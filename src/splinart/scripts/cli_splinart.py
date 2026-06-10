@@ -2,9 +2,8 @@
 #     Loic Gouarin <loic.gouarin@gmail.com>
 #
 # License: BSD 3 clause
-"""
-cli
-"""
+"""Command-line utility."""
+
 from __future__ import print_function, division, absolute_import
 import argparse
 import splinart as spl

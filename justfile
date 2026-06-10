@@ -26,6 +26,8 @@ PYTEST_BIN        := "pytest"
 PYTEST            := UV_RUN + PYTEST_BIN
 PRE_COMMIT_BIN    := "pre-commit"
 PRE_COMMIT        := UV_RUN + PRE_COMMIT_BIN
+PREK_BIN          := "prek"
+PREK              := UV_RUN + PREK_BIN
 
 # Configuration.
 UV_VENV_OPTS       := "" + \
@@ -39,6 +41,8 @@ SPHINX_APIDOC_OPTS := "" + \
 PYTEST_OPTS        := "" + \
     " -v"
 PRECOMMIT_RUN_OPTS := "" + \
+    " --all-files"
+PREK_RUN_OPTS      := "" + \
     " --all-files"
 
 
@@ -80,7 +84,10 @@ test:
     @{{ PYTEST }} {{ PYTEST_OPTS }}
 
 pre-commit:
-    {{ PRE_COMMIT }} run {{ PRECOMMIT_RUN_OPTS }}
+    # pre-commit
+    #@{{ PRE_COMMIT }} run {{ PRECOMMIT_RUN_OPTS }}
+    # prek
+    @{{ PREK }} run {{ PREK_RUN_OPTS }}
 
 # Generate HTML documentation through Sphinx.
 #doc:

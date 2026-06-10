@@ -24,6 +24,8 @@ SPHINX_APIDOC_BIN := "sphinx-apidoc"
 SPHINX_APIDOC     := UV_RUN + SPHINX_APIDOC_BIN
 PYTEST_BIN        := "pytest"
 PYTEST            := UV_RUN + PYTEST_BIN
+PRE_COMMIT_BIN    := "pre-commit"
+PRE_COMMIT        := UV_RUN + PRE_COMMIT_BIN
 
 # Configuration.
 UV_VENV_OPTS       := "" + \
@@ -36,6 +38,8 @@ SPHINX_APIDOC_OPTS := "" + \
     " -f"
 PYTEST_OPTS        := "" + \
     " -v"
+PRECOMMIT_RUN_OPTS := "" + \
+    " --all-files"
 
 
 # Put it first so that "make" without argument is like "make help".
@@ -74,6 +78,9 @@ lint target="":
 # Run tests.
 test:
     @{{ PYTEST }} {{ PYTEST_OPTS }}
+
+pre-commit:
+    {{ PRE_COMMIT }} run {{ PRECOMMIT_RUN_OPTS }}
 
 # Generate HTML documentation through Sphinx.
 #doc:

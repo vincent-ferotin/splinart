@@ -1,0 +1,29 @@
+[project]
+name = "setuptools"
+description = "Draw spline art of circle or line (fork of 'splinart')."
+version = "0.1.0"
+requires-python = ">=3.13"
+maintainers = [ { name = "Loïc Gouarin", email = "loic.gouarin@gmail.com" }, { name = "Vincent Férotin", email = "vferotin.pro@gmail.com" } ]
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE.txt"]
+dependencies = [
+    "matplotlib>=3.10.9,<3.11",
+    "numpy>=2.4.6,<2.5",
+]
+
+[project.scripts]
+splinart = "splinart.scripts.cli_splinart:main"
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "pylint>=4.0.5",
+    "pytest>=9.0.3",
+    "ruff>=0.15.16",
+]

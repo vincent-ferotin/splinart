@@ -68,12 +68,12 @@ venv DEV="":
     fi
 
 # Format Python sources.
-fmt target="":
+fmt target="src/splinart tests":
     # ruff format
     @{{ RUFF_FORMAT }} {{ RUFF_FORMAT_OPTS }} {{ target }}
 
 # Lint Python sources.
-lint target="":
+lint target="src/splinart tests":
     # ruff check
     @{{ RUFF_CHECK }} {{ RUFF_CHECK_OPTS }} {{ target }}
     # pylint

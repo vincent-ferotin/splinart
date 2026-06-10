@@ -60,3 +60,8 @@ def line(begin, end, ypos=0.5, npoints=50):
     x = np.linspace(begin, end, npoints)
     y = ypos * np.ones(npoints)
     return np.c_[x, y]
+
+
+def point(x, y):
+    """Defines some point."""
+    return (x, y)

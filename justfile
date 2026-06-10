@@ -72,8 +72,8 @@ lint target="":
     {{ PYLINT }} {{ target }}
 
 # Run tests.
-#test:
-#    @{{ PYTEST }} {{ PYTEST_OPTS }}
+test:
+    @{{ PYTEST }} {{ PYTEST_OPTS }}
 
 # Generate HTML documentation through Sphinx.
 #doc:
